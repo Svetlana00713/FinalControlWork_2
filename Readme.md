@@ -41,6 +41,5 @@
 
      sudo dpkg -r sl
 5. Выложить историю команд в терминале ubuntu
-![История команд](https://github.com/Svetlana00713/FinalControlWork_2.git.row/master/Linux/Screens/5.GIF)
 
 
