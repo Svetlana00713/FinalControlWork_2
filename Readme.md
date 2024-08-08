@@ -26,11 +26,11 @@
      mv "Животные.txt" "Друзья человека.txt"
 ```
 2. **Создать директорию, переместить файл туда.**
-
+```
      mkdir Final_control_work
 
      mv "Друзья человека.txt" Final_control_work/
-
+```
 3. **Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого репозитория.**
 ```
      sudo wget https://dev.mysql.com/get/mysql-apt-config_0.8.17-1_all.deb
@@ -46,7 +46,8 @@
      sl
 
      sudo dpkg -r sl
-5. Выложить историю команд в терминале ubuntu
+```
+5. **Выложить историю команд в терминале ubuntu.**
 ![История команд](https://github.com/Svetlana00713/FinalControlWork_2.git.row/master/Linux/Screens/5.GIF)
 
 
