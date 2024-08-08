@@ -48,6 +48,9 @@
      sudo dpkg -r sl
 ```
 5. **Выложить историю команд в терминале ubuntu.**
-![История команд](https://github.com/Svetlana00713/FinalControlWork_2.git.row/master/Linux/Screens/5.GIF)
+![История команд](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/Linux/Screens/5.png)
+
+6. **Нарисовать диаграмму, в которой есть классы: родительский класс, "Домашние животные" и "Вьючные животные", в составы которых в случае "Домашних животных" войдут классы: "Собаки", "Кошки", "Хомяки", а в класс "Вьючные животные" войдут: "Лошади", "Верблюды" и "Ослы".**
+![Human_friends](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/Diagramm/Human_friends.png)
 
 
