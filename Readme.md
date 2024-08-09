@@ -53,7 +53,7 @@
 
 6. **Нарисовать диаграмму, в которой есть классы: родительский класс, "Домашние животные" и "Вьючные животные", в составы которых в случае "Домашних животных" войдут классы: "Собаки", "Кошки", "Хомяки", а в класс "Вьючные животные" войдут: "Лошади", "Верблюды" и "Ослы".**
 
-![Human_friends](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/Diagramm/Human_friends.png)
+![Human_friends](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/Diagramms/Human_friends.png)
 
 7. **В подключенном MySQL репозитории создать базу данных “Друзья человека”.**
 
@@ -63,6 +63,7 @@
 8. **Создать таблицы с иерархией из диаграммы в БД.**
 
 [Script.sql](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/MySQL/Script.sql)
+
 ![Таблицы](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/MySQL/Screens/3.png)
 
 9. **Заполнить низкоуровневые таблицы именами животных, командами, которые они выполняют, и датами рождения.**
@@ -83,7 +84,7 @@
 
 13. **Создать класс с инкапсуляцией методов и наследованием по диаграмме.**
 
-![Инкапсулированная иерархия](https://github.com/Svetlana00713/FinalControlWork_2/commit/95ef753eaf26ec1e794dc96d568012f7468b7d36)
+![Инкапсулированная иерархия](https://github.com/Svetlana00713/FinalControlWork_2/blob/master/Diagramms/Incapsulated%20hierarchy.jpg)
 
 
 
