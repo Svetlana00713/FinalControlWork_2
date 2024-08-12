@@ -1,4 +1,4 @@
-package Model.Services;
+package Presenter;
 
 public class Counter implements AutoCloseable {
     public static int idCount = 0;
@@ -16,6 +16,6 @@ public class Counter implements AutoCloseable {
     @Override
     public void close() {
         idCount = 0;
-        System.out.println("Counter closed");
+        System.out.println("Изменения в реестре сохранены");
     }
 }

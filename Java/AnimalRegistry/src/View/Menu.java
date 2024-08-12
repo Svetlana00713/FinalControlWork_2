@@ -3,7 +3,7 @@ import Model.Animals;
 import java.util.Collection;
 import java.util.Scanner;
 
-public class View {
+public class Menu {
     public static final String TABLE_ROW = "|%3s|%-8s|%8s|%-10s|%-12s|%10s|%-40s|";
     public static final String TABLE_HEADER = String.format(TABLE_ROW
             , "id"
@@ -26,7 +26,7 @@ public class View {
 
     Scanner scan;
 
-    public View(){
+    public Menu(){
         this.scan = new Scanner(System.in);
     }
 

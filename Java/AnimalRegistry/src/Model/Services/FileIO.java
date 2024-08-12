@@ -1,6 +1,7 @@
 package Model.Services;
+
 import Model.Animals;
-import View.View;
+import View.Menu;
 
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -39,7 +40,7 @@ public class FileIO {
         try(BufferedWriter wr = new BufferedWriter(
                 new OutputStreamWriter(new FileOutputStream(SAVED_REGISTRY), StandardCharsets.UTF_8)))
         {
-            wr.write(View.TABLE_HEADER);
+            wr.write( Menu.TABLE_HEADER);
             wr.newLine();
             for (Animals a: animalList){
                 wr.write(a.toString());

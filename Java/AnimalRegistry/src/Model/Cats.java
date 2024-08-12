@@ -1,6 +1,6 @@
 package Model;
 
-import View.View;
+import View.Menu;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +19,7 @@ public class Cats extends Pets{
 
     @Override
     public String toString() {
-        return String.format(View.TABLE_ROW,
+        return String.format( Menu.TABLE_ROW,
                 this.Id,
                 this.topName,
                 this.groupName,

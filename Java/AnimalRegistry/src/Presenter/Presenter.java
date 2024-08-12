@@ -1,8 +1,8 @@
-package Controller;
+package Presenter;
 import Model.Animals;
 import Model.Services.*;
 
-import View.View;
+import View.Menu;
 
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -12,22 +12,22 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Controller {
+public class Presenter {
     HashMap<Integer, Animals> currentReg;
     private final Constructor constructor;
-    private final View view;
+    private final Menu menu;
     private final FileIO f;
 
-    public Controller() {
-        this.constructor = new Constructor();
-        this.view = new View();
-        this.f = new FileIO();
+    public Presenter() {
+        this.constructor = new Constructor ();
+        this.menu = new Menu ();
+        this.f = new FileIO ();
         this.currentReg = (HashMap<Integer, Animals>) f.fileAnimals
                 .stream().collect(Collectors.toMap(Animals::getId, Function.identity()));
     }
 
     public void start(){
-        view.showIntro();
+        menu.showIntro();
         menuLoop();
     }
 
@@ -38,31 +38,31 @@ public class Controller {
             int choice;
             boolean loop = true;
             while(loop){
-                view.showMainMenu();
-                choice = view.menuChoice();
+                menu.showMainMenu();
+                choice = menu.menuChoice();
                 switch (choice) {
                     case 1 -> showAll();
-                    case 2 -> view.operationResult(addAnimal(c));
-                    case 3 -> view.operationResult(oneAnimalMenu());
-                    case 4 -> view.operationResult(f.saveRegistry(currentReg.values()));
+                    case 2 -> menu.operationResult(addAnimal(c));
+                    case 3 -> menu.operationResult(oneAnimalMenu());
+                    case 4 -> menu.operationResult(f.saveRegistry(currentReg.values()));
                     case 5 -> loop = false;
-                    default -> view.wrongMenu();
+                    default -> menu.wrongMenu();
                 }
             }
         } catch (CounterException e){
             System.out.println( e.getMessage());
         }
-        view.showOutro();
+        menu.showOutro();
         System.exit(0);
     }
 
     public boolean addAnimal(Counter c) throws CounterException{
-        int classChoice = view.classMenu();
+        int classChoice = menu.classMenu();
         ArrayList<String> animalData = new ArrayList<>(List.of(
-                view.newAnimalInput().split(" ", 3))) ;
+                menu.newAnimalInput().split(" ", 3))) ;
         try
         {
-            int Id = c.add(animalData.size()); //место возможного CounterException
+            int Id = c.add(animalData.size());
             Animals a = constructor.createAnimal(Id,classChoice, animalData);
             if(a != null){
                 currentReg.put(a.getId(),a);
@@ -76,31 +76,31 @@ public class Controller {
     }
 
     public boolean oneAnimalMenu(){
-        int userId = view.IdFromUser();
+        int userId = menu.IdFromUser();
         Animals a = currentReg.get(userId);
         if (a == null){
-            view.wrongId(userId);
+            menu.wrongId(userId);
             return false;
         }
         int choice;
         boolean loop = true;
         while(loop){
-            view.showAnimalMenu(a);
-            choice = view.menuChoice();
+            menu.showAnimalMenu(a);
+            choice = menu.menuChoice();
             switch (choice) {
-                case 1 -> a.setCommands(view.askNewCommand());
+                case 1 -> a.setCommands( menu.askNewCommand());
                 case 2 -> {
                     currentReg.remove(a.getId());
                     return true;
                 }
                 case 3 -> loop=false;
-                default -> view.wrongMenu();
+                default -> menu.wrongMenu();
             }
         }
         return false;
     }
     public void showAll() {
-        view.printDB(currentReg.values());
+        menu.printDB(currentReg.values());
         menuLoop();
     }
 }
